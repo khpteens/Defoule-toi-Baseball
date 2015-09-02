@@ -5,7 +5,7 @@
 // VARIABLES ***********************************************
 
 var settings = {
-	"NAME": "Vent It Baseball",
+	"NAME": "Défoule-toi – Baseball",
 
 	"WIDTH": 500,
 	"HEIGHT": undefined,
@@ -15,8 +15,8 @@ var settings = {
 
 	"PAUSED": false,
 
-	"GA_CODE": "UA-66839321-1",
-	"ANALYTICS_ON": false,
+	"GA_CODE": "UA-66839321-2", // French GA code
+	"ANALYTICS_ON": true,
 
 	"SOUND_ON": true,
 	"VOLUME": 1,
@@ -38,8 +38,8 @@ if (settings.RATIO <= settings.RATIO_MIN) {
 
 settings.HEIGHT = settings.RATIO * settings.WIDTH;
 
-var copyright_txt = "© BroTalk",
-	release_txt = "Release Candidate | Sept.1.2015";
+var copyright_txt = "© Coin des Gars",
+	release_txt = "Version candidate | 2.sept.2015";
 
 trace(settings.NAME + " | " + release_txt);
 

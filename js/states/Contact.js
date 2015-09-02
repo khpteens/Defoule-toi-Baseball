@@ -12,11 +12,11 @@ Vent.Contact.prototype = {
 		createBG(0x015095);
 		createCopyright();
 
-		var text = "Touch base with us";
-		var t = this.game.add.text(this.game.width / 2, this.game.height / 2 - 190, text, h2_style);
+		var text = "Discute avec nous.";
+		var t = this.game.add.text(this.game.width / 2, this.game.height / 2 - 210, text, h2_style);
 		t.anchor.set(0.5);
 
-		var text = "Contact one of our counsellors.";
+		var text = "Communique avec l’un\nde nos intervenants.";
 		var t2 = this.game.add.text(this.game.width / 2, this.game.height / 2 - 150, text, h3_style);
 		t2.anchor.set(0.5);
 
@@ -25,9 +25,9 @@ Vent.Contact.prototype = {
 
 		// Live Chat
 		if (chatOpen) {
-			text = chatOpen_txt[0];			
+			text = chatOpen_txt[1];			
 		} else {
-			text = chatClosed_txt[0];
+			text = chatClosed_txt[1];
 			messageButtonH = this.game.height / 2 + 10,
 			phoneButtonH = this.game.height / 2 - 50;
 		}
@@ -38,7 +38,7 @@ Vent.Contact.prototype = {
 		}, this);
 
 		// Phone
-		text = "Phone a counsellor";
+		text = "Téléphoner à\nun intervenant";
 		var PhoneBt = this.game.add.sprite(this.game.width / 2, phoneButtonH, "square");
 		createBt(PhoneBt, text, false, false, "icon-phone");
 		PhoneBt.events.onInputUp.add(function() {
@@ -46,7 +46,7 @@ Vent.Contact.prototype = {
 		}, this);
 
 		// More info
-		text = counsellor_txt[0];
+		text = counsellor_txt[1];
 		var PhoneBt = this.game.add.sprite(this.game.width / 2, this.game.height / 2 + 70, "square");
 		createBt(PhoneBt, text, false);
 		PhoneBt.events.onInputUp.add(function() {
@@ -55,14 +55,14 @@ Vent.Contact.prototype = {
 
 		// Phone
 		var BackBt = this.game.add.sprite(this.game.width / 2, this.game.height / 2 + 190, "square");
-		createBt(BackBt, "Main menu", "MainMenu");
+		createBt(BackBt, "Menu principal", "MainMenu");
 
 	},
 	update: function() {}
 };
 
 function phone_brotalk() {
-	var r = confirm("Are you sure you want to dial Kids Help Phone's number?");
+	var r = confirm("Êtes-vous sûr que vous voulez composer le numéro de Jeunesse, J'écoute ?");
 	if (r === true) {
 		window.location = phone_url;
 	} else {
@@ -71,7 +71,7 @@ function phone_brotalk() {
 }
 
 function message_brotalk() {
-	var r = confirm("Are you sure you want to leave this page?");
+	var r = confirm("Êtes-vous sûr de vouloir quitter cette page ?");
 	if (r === true) {
 		openInNewTab(chat_url);
 	} else {
@@ -80,7 +80,7 @@ function message_brotalk() {
 }
 
 function moreAbout() {
-	var r = confirm("Are you sure you want to leave this page?");
+	var r = confirm("Êtes-vous sûr de vouloir quitter cette page ?");
 	if (r === true) {
 		openInNewTab(counsellor_url);
 	} else {

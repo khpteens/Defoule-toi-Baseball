@@ -15,7 +15,7 @@ Vent.MainMenu.prototype = {
 
 		// Play now 
 		var PlayBt = this.game.add.sprite(this.game.width / 2, this.game.height / 2 + 110, "square");
-		createBt(PlayBt, "Start", "Pick");
+		createBt(PlayBt, "Débuter", "Pick");
 		
 	},
 	update: function() {}

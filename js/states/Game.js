@@ -114,15 +114,15 @@ function create_instructions_prompt() {
 	prompt.add(overlay);
 
 	// Instructions
-	text = "1. Click to pitch.\n2. Then click on the ball to hit it.";
-	if (hasTouch) text = "1. Tap to pitch.\n2. Then tap on the ball to hit it.";
+	text = "1. Cliquez pour qu’on te lance la balle.\n2. Cliquez ensuite sur la balle pour la frapper.";
+	if (hasTouch) text = "1. Appuie pour qu’on te lance la balle.\n2. Appuie ensuite sur la balle pour la frapper.";
 	winText = Vent.game.add.text(settings.WIDTH / 2, settings.HEIGHT / 2 - 40, text, p_style);
 	winText.anchor.set(0.5);
 	prompt.add(winText);
 
 	// Continue button
 	ContinueBt = Vent.game.add.sprite(settings.WIDTH / 2, settings.HEIGHT / 2 + 45, 'square');
-	createBt(ContinueBt, "Continue", false);
+	createBt(ContinueBt, "Continuer", false);
 	ContinueBt.events.onInputUp.add(function() {
 		prompt.visible = false;
 

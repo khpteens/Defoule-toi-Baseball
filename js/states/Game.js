@@ -209,7 +209,7 @@ function setup_game() {
 
 	// create balls group	
 	ball = Vent.game.add.sprite(0, 0, "ball");
-	ball.anchor.set(0.5);
+	ball.anchor.set(0.5);	
 	ball.scale.set(0);
 	ball.alpha = 0;
 
@@ -237,13 +237,13 @@ function pitch_update() {
 			ball.alpha = 0;
 			ball.x = ball.y = 0;
 			mode = "pitch";
-			pitcher.frame = 0;				
+			pitcher.frame = 0;
 		}
 	}
 }
 
-function hit_update(){
-	if (mode == "hit"){
+function hit_update() {
+	if (mode == "hit") {
 
 	}
 }

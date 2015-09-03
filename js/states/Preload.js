@@ -42,6 +42,8 @@ Vent.Preload.prototype = {
 
 		// animations
 		this.load.spritesheet('pitcher', 'assets/img/pitcher.png', 131, 150, 14);
+		this.load.spritesheet('icon-sound', 'assets/img/i/soundOnOff.png', 60, 60);
+		this.load.spritesheet('icon-fullscreen', 'assets/img/i/expand-contract.png', 60, 60);
 
 		// sprites			
 		// particles
@@ -68,11 +70,8 @@ Vent.Preload.prototype = {
 		this.load.image('icon-phone', 'assets/img/i/phone.png');
 		this.load.image('icon-chat', 'assets/img/i/chat.png');
 		this.load.image('icon-baseball', 'assets/img/i/baseball.png');
-		this.load.image('icon-x', 'assets/img/i/x.png');
-		this.load.image('icon-note', 'assets/img/i/note.png');
-		this.load.image('icon-speaker', 'assets/img/i/speaker.png');
-		this.load.image('icon-expand', 'assets/img/i/expand.png');
-		this.load.image('icon-contract', 'assets/img/i/contract.png');
+		this.load.image('icon-x', 'assets/img/i/x.png');		
+		this.load.image('icon-speaker', 'assets/img/i/speaker.png');		
 
 		// Audio        
 		// Firefox doesn't support mp3 files, so use ogg

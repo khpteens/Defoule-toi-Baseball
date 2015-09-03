@@ -39,10 +39,10 @@ if (settings.RATIO <= settings.RATIO_MIN) {
 settings.HEIGHT = settings.RATIO * settings.WIDTH;
 
 var copyright_txt = "© Coin des Gars",
-	release_txt = "Version candidate | 2.sept.2015";
+	release_txt = "Version candidate | 2.sept.2015",
+	soundBt, fullscreenBt;
 
 trace(settings.NAME + " | " + release_txt);
-
 
 // FUNCTIONS ***********************************************
 
@@ -144,7 +144,7 @@ function createBt(button, label_text, target_state, shape, iconImage) {
 		icon.anchor.set(0.5);
 		icon.height = button.height - iconMod;
 		icon.width = button.height - iconMod;
-		button.icon = icon;		
+		button.icon = icon;				
 	}
 
 	if (target_state != false && target_state != undefined) {
@@ -215,18 +215,20 @@ function createCopyright() {
 function createSoundScreenToggles(){
 
 	// soundBt
-	var soundBt = Vent.game.add.sprite(Vent.game.width - 45, Vent.game.height - 15, "square");
-	createBt(soundBt, "icon-note", false, "square-small");	
+	soundBt = Vent.game.add.sprite(Vent.game.width - 45, Vent.game.height - 15, "square");
+	createBt(soundBt, "icon-sound", false, "square-small");	
+	if(!settings.SOUND_ON) soundBt.label.frame = 1;
 	soundBt.events.onInputUp.add(function() {
-		soundToggle();
-	});
+		soundToggle();		
+	});	
 
 	// fullscreenBt
-	var fullscreenBt = Vent.game.add.sprite(Vent.game.width - 15, Vent.game.height - 15, "square");
-	createBt(fullscreenBt, "icon-expand", false, "square-small");	
+	fullscreenBt = Vent.game.add.sprite(Vent.game.width - 15, Vent.game.height - 15, "square");
+	createBt(fullscreenBt, "icon-fullscreen", false, "square-small");
+	if(settings.FULLSCREEN) fullscreenBt.label.frame = 1;	
 	fullscreenBt.events.onInputUp.add(function() {
-		fullscreenToggle();
-	});
+		fullscreenToggle();		
+	});		
 }
 
 function openInNewTab(url) {
@@ -251,21 +253,23 @@ function playAudio(mysound) {
 	}
 }
 
-function soundToggle() {
-
+function soundToggle() {	
 	if (!settings.SOUND_ON) {
 		settings.SOUND_ON = true;
 		settings.VOLUME = 0.5;
+		soundBt.label.frame = 0;
+
 	} else {
 		settings.SOUND_ON = false;
 		settings.VOLUME = 0;
+		soundBt.label.frame = 1;
 	}
 }
 
 function fullscreenToggle() {
-
+	
 	if (!settings.FULLSCREEN) {
-
+		
 		settings.FULLSCREEN = true;
 		settings.FRAME_WIDTH = settings.FRAME.style.width;
 		settings.FRAME_HEIGHT = settings.FRAME.style.height;
@@ -274,13 +278,18 @@ function fullscreenToggle() {
 		settings.FRAME.style.position = "absolute";
 		settings.FRAME.style.width = window.innerWidth + "px";
 		settings.FRAME.style.height = window.innerHeight + "px";
+		
+		fullscreenBt.label.frame = 1;
 
 	} else {
+		
 		settings.FULLSCREEN = false;
 
 		settings.FRAME.style.zindex = 1;
 		settings.FRAME.style.position = "relative";
 		settings.FRAME.style.width = settings.FRAME_WIDTH;
 		settings.FRAME.style.height = settings.FRAME_HEIGHT;
+
+		fullscreenBt.label.frame = 0;
 	}
 }

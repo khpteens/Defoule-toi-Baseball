@@ -39,7 +39,7 @@ if (settings.RATIO <= settings.RATIO_MIN) {
 settings.HEIGHT = settings.RATIO * settings.WIDTH;
 
 var copyright_txt = "© Coin des Gars",
-	release_txt = "Version candidate | 2.sept.2015",
+	release_txt = "Version d'or | 8.oct.2015",
 	soundBt, fullscreenBt;
 
 trace(settings.NAME + " | " + release_txt);
